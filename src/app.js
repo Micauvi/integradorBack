@@ -49,12 +49,6 @@ app.post("/login", async (req, res) => {
   const USUARIO = req.body.USUARIO;
   const CONTRASENA = req.body.CONTRASENA;
 
-  // const users = await UsersModel.findAll();
-  // const seleccionarUsuario = users.find((element)=>{
-  //   return element.USUARIO === USUARIO
-  // })
-  //   console.log(seleccionarUsuario)
-  // })
   try {
     const users = await UsersModel.findAll();
     const seleccionarUsuario = users.find((usuarioRegistrado) => {
@@ -68,28 +62,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-// const USUARIO = req.body.USUARIO;
-// const CONTRASENA = req.body.CONTRASENA;
-// try{
-// const login=await UsersModel.findOne({WHERE:{USUARIO, CONTRASENA}})
-//   res.status(200).json({status:"Logeaste"})
-// }catch (error) {
-//   console.log(error);
-//   res.status(400).json({ status: "Error " });
-// }
-
-// res.status(200).json({status:"exitoso"})
-// res.status(404).json({status:"incorrecto"})
-
-// const USUARIO = req.body.USUARIO;
-// const CONTRASENA = req.body.CONTRASENA;
-// try{
-// const buscar = await UsersModel.findOne({ WHERE: { USUARIO } });
-// res.json(buscar);
-// }catch (error) {
-//   console.log(error);
-//   res.status(400).json({ status: "Error " });
-// }
 
 //endpoint para registrarse
 app.post("/api/user", async (req, res) => {
