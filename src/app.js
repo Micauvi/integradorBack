@@ -82,7 +82,7 @@ app.get("/api/users", (req, res) => {
 });
 
 //mensajes recibidos por x usuarios
-app.get("api/users/<username>/messges/inbox", (req, res) => {
+app.get("/api/users/<username>/messges/inbox", (req, res) => {
   res.status(200).json({ status: "existoso" });
 });
 //mensajes enviados por x usuarios
@@ -93,6 +93,10 @@ app.get("/api/users/<username>messages/sent", (req, res) => {
 app.post("/api/users/<username>/messages/", (req, res) => {
   req.body.res.status(200).json({ status: "exitoso" });
 });
+app.get("/exitoso", (req, res) => {
+  res.status(200).json({ status: "exitoso" });
+});
+
 
 // app.post('/registro', jsonParser, function (req, res) {
 //   const usuario = req.body.usuario;
